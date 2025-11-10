@@ -92,7 +92,8 @@ services:
       - SINGLE_USER_CREDENTIALS_USERNAME=admin
       - SINGLE_USER_CREDENTIALS_PASSWORD=ctsBtRBKHRAx69EqUghvvgEvjnaLjFEB
     volumes:
-      - ./nifi-current:/opt/nifi/nifi-current
+#      - ./nifi-current:/opt/nifi/nifi-current
+      - nifi_data:/opt/nifi/nifi-current
       - ./postgresql-42.7.8.jar:/opt/nifi/nifi-current/lib/postgresql-42.7.8.jar
     networks:
       - bigdata-network
@@ -116,7 +117,7 @@ services:
 
 volumes:
   metabase-data:
-  #nifi_data:
+  nifi_data:
   postgresdata:
   kafka_volume1:
   kafka_volume2:
